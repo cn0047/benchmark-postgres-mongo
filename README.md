@@ -3,6 +3,13 @@ PostgreSQL vs MongoDB
 
 #### Prerequisites
 
+Let's consider simple example,
+suppose we have 2 entities (storage and file) with relationship `1 to many` (super simple case).
+It will be 2 tables in `postgres`, it's obvious.
+And in `mongo` will have document with embedded data, as usual.
+
+Data will look pretty like this:
+
 ````sql
 # Postgre `storage` table example
  id |                   sha1                   | count
