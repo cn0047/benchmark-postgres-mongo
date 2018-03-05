@@ -40,6 +40,12 @@ Data will look pretty like this:
 }
 ````
 
+Before perform benchmarking will import
+**500** entries as `storage` data and **4924** entries as `file` data into both databases.
+<br>The target - is to have absolutely same data-sets in both databases!
+
+Now let's run a couple of queries to check performance of both databases.
+
 #### Prepare
 
 ````
