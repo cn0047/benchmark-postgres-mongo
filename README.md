@@ -3,7 +3,7 @@ PostgreSQL vs MongoDB
 
 #### Prerequisites
 
-````
+````sql
 # Postgre `storage` table example
  id |                   sha1                   | count
 ----+------------------------------------------+-------
@@ -41,7 +41,7 @@ docker network create --driver bridge xnet
 
 #### PostgreSQL
 
-````
+````sql
 # Start postgres
 docker run -it --rm -p 5432:5432 --net=xnet --name xpostgres --hostname xpostgres \
     -e POSTGRES_DB=test -e POSTGRES_USER=dbu -e POSTGRES_PASSWORD=dbp \
@@ -100,7 +100,7 @@ docker run -it --rm --net=xnet -v $PWD:/app -w /app -e GOPATH='/app' \
 
 #### MongoDB
 
-````
+````sql
 # Start mongo
 docker run -it --rm -p 27017:27017 --net=xnet --name xmongo  --hostname xmongo \
     -v $PWD/data/file_storage.json:/tmp/d.json \
