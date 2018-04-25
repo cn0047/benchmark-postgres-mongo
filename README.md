@@ -1,6 +1,8 @@
 PostgreSQL vs MongoDB
 -
 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
 #### Prerequisites
 
 Let's consider simple example,
