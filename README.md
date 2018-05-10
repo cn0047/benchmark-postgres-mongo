@@ -81,7 +81,7 @@ docker exec -ti xpostgres psql -h localhost -p 5432 -U dbu -d test -c '
 
 # Import data into postgres
 docker run -it --rm --net=xnet -v $PWD/data:/app -w /app cn007b/php php importDataIntoPostgres.php
-# I don't know why I've used php here 😀 but it works, and import data into db 😉
+# I don't know why I've used php here 😀 but it works, and imports data into db 😉
 
 # Check data
 docker exec -ti xpostgres psql -h localhost -p 5432 -U dbu -d test -c '
