@@ -254,9 +254,9 @@ docker run -it --rm --net=xnet -v $PWD:/app -w /app -e GOPATH='/app' cn007b/go:1
 | v2 with data volume                                   |
 +-------------+--------------------+--------------------+
 | v2.query1   | 33596 microseconds | 43352 microseconds |
-| v2.query2   | 20072 microseconds | 1711 microseconds  |
-| v2.query3   | 14750 microseconds | 573 microseconds   |
-| v2.query4   | 17727 microseconds | 1678 microseconds  |
+| v2.query2   | 20072 microseconds |  1711 microseconds |
+| v2.query3   | 14750 microseconds |   573 microseconds |
+| v2.query4   | 17727 microseconds |  1678 microseconds |
 +-------------+--------------------+--------------------+
 ````
 
