@@ -1,39 +1,19 @@
-package main
+package postgres
 
 import (
-	"fmt"
-	"time"
-	"database/sql"
 	_ "github.com/lib/pq"
+	"database/sql"
+
+	"benchmark/postgres/dao"
 )
 
-type MainRecord struct {
-	Id int
-	Sha1 string
-	Name string
-}
-
-func (r *MainRecord) Print() {
-	fmt.Printf("%d, %s, %s \n", r.Id, r.Sha1, r.Name)
-}
-
-func main() {
-	now := time.Now()
-	nanos := now.UnixNano()
-
-	query2()
-
-	now2 := time.Now()
-	nanos2 := now2.UnixNano()
-
-	fmt.Printf("Took: %d microseconds\n", (nanos2 - nanos) / 1000)
-}
-
-func query2() {
-	connStr := "host=xpostgres port=5432 user=dbu password=dbp dbname=test sslmode=disable"
-	db, _ := sql.Open("postgres", connStr)
+func Query2() {
+	db := GetDBC()
 	defer db.Close()
+	ExecQuery2(db)
+}
 
+func ExecQuery2(db *sql.DB) {
 	query := `
 		SELECT s.id, s.sha1, f.name
 		FROM storage s
@@ -43,7 +23,7 @@ func query2() {
 	rows, _ := db.Query(query)
 	defer rows.Close()
 
-	r := &MainRecord{}
+	r := &dao.MainRecord{}
 	for rows.Next() {
 		rows.Scan(&r.Id, &r.Sha1, &r.Name)
 		r.Print()
