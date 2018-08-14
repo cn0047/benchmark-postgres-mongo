@@ -124,8 +124,7 @@ docker run -it --rm --net=xnet -v $PWD:/app -w /app -e GOPATH='/app' cn007b/go:1
     go run src/benchmark/main.go --v=v1 --db=postgres --q=query2
     go run src/benchmark/main.go --v=v1 --db=postgres --q=query3
     go run src/benchmark/main.go --v=v1 --db=postgres --q=query4
-'
-docker run -it --rm --net=xnet -v $PWD:/app -w /app -e GOPATH='/app' cn007b/go:1.10 sh -c '
+
     go run src/benchmark/main.go --v=v2 --db=postgres --q=query1
     go run src/benchmark/main.go --v=v2 --db=postgres --q=query2
     go run src/benchmark/main.go --v=v2 --db=postgres --q=query3
@@ -193,8 +192,7 @@ docker run -it --rm --net=xnet -v $PWD:/app -w /app -e GOPATH='/app' cn007b/go:1
     go run src/benchmark/main.go --v=v1 --db=mongo --q=query2
     go run src/benchmark/main.go --v=v1 --db=mongo --q=query3
     go run src/benchmark/main.go --v=v1 --db=mongo --q=query4
-'
-docker run -it --rm --net=xnet -v $PWD:/app -w /app -e GOPATH='/app' cn007b/go:1.10 sh -c '
+
     go run src/benchmark/main.go --v=v2 --db=mongo --q=query1
     go run src/benchmark/main.go --v=v2 --db=mongo --q=query2
     go run src/benchmark/main.go --v=v2 --db=mongo --q=query3
@@ -222,9 +220,8 @@ docker run -it --rm --net=xnet -v $PWD:/app -w /app -e GOPATH='/app' cn007b/go:1
 #### Result (2018-08-14)
 
 **2500** entries in both dbs.
-
-`v1` - steps: connect into db, get data, print data. 
-`v2` - steps: get data, print data.
+<br>`v1` - steps: connect into db, get data, print data.
+<br>`v2` - steps: get data, print data.
 
 ````
 +-------------+--------------------+--------------------+
